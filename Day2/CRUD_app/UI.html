@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td,
+      th {
+        border: double;
+      }
+    </style>
+    <script src="./logic.js"></script>
+    <script>
+      window.onload = function () {
+        var logic = new appLogic();
+
+        var options = "";
+        for (var i = 0; i < logic.categories.length; i++) {
+          options +=
+            '<option value="' +
+            logic.categories[i] +
+            '">' +
+            logic.categories[i] +
+            "</option>";
+        }
+        console.log(options);
+        document.getElementById("categoryName").innerHTML = options;
+
+        var products = logic.getProducts();
+        console.log("products :>> ", products);
+        generateTable(products);
+
+        function generateTable(products) {
+          var headers = "";
+          // read the 0th record fro the array
+          var prd = products[0];
+          var columns = [];
+
+          //read all keys of 0th index
+          //   for(var c in prd){
+          //      columns.push(c);
+          //   }
+          columns = Object.keys(prd);
+          console.log("columns :>> ", columns);
+          var row = "<tr>";
+          for (var c of columns) {
+            headers += "<th>" + c + "</th>";
+          }
+          console.log("headers :>> ", headers);
+          row += headers + "</tr>";
+          console.log("row :>> ", row);
+
+          document.getElementById("thead").innerHTML = row;
+
+          var tr = "";
+          for (var product of products) {
+            console.log("product :>> ", product);
+            tr += "<tr>";
+            for (var key of columns) {
+              tr += "<td>" + product[key] + "</td>";
+            }
+            tr += "<tr>";
+          }
+          document.getElementById("tbody").innerHTML = tr;
+        }
+
+        document.getElementById("clear").addEventListener(
+          "click",
+          function () {
+            var inputs = document.getElementsByClassName("c1");
+            for (var input of inputs) {
+              input.value = "";
+            }
+            document.getElementById("save").value = "Save";
+            document.getElementById("save").disabled = false;
+            document.getElementById("dvValidations").innerHTML = "";
+          },
+          false
+        );
+
+        document.getElementById("save").addEventListener(
+          "click",
+          function () {
+            // define an object literal
+            var prd = {};
+            prd.ProductId = document.getElementById("productId").value;
+            prd.ProductName = document.getElementById("productName").value;
+            prd.CategoryName = document.getElementById("categoryName").value;
+            prd.Price = document.getElementById("price").value;
+            if (this.value == "Save") {
+              products = logic.addProduct(prd);
+            }
+            if (this.value == "Update") {
+              products = logic.updateProduct(prd);
+            }
+            generateTable(products);
+          },
+          false
+        );
+
+        document.getElementById("productId").addEventListener(
+          "change",
+          function () {
+            var id = parseInt(this.value);
+
+            if (id < 0) {
+              this.style.backgroundColor = "red";
+              document.getElementById("dvValidations").innerHTML +=
+                "ProductId cannot be negative";
+            }
+            if (!id) {
+              this.style.backgroundColor = "red";
+              document.getElementById("dvValidations").innerHTML +=
+                "ProductId cannot be left blank";
+            }
+            if (id > 0) {
+              this.style.backgroundColor = null;
+              document.getElementById("dvValidations").innerHTML = "";
+
+              for (let product of products) {
+                if (id == product.ProductId) {
+                  document.getElementById("productName").value =
+                    product.ProductName;
+                  document.getElementById("categoryName").value =
+                    product.CategoryName;
+                  document.getElementById("price").value = product.Price;
+                  document.getElementById("save").value = "Update";
+                  break;
+                }
+              }
+            }
+          },
+          false
+        );
+        document
+          .getElementById("price")
+          .addEventListener("change", function () {
+            document.getElementById("save").disabled = false;
+            this.style.backgroundColor = "white";
+            if (parseInt(this.value) < 0) {
+              document.getElementById("save").disabled = true;
+              this.style.backgroundColor = "red";
+              document.getElementById("dvValidations").innerHTML =
+                "Price should not be negative";
+              return;
+            }
+            switch (document.getElementById("categoryName").value) {
+              case "ECT":
+                if (parseInt(this.value) < 1000) {
+                  document.getElementById("save").disabled = true;
+                  this.style.backgroundColor = "red";
+                  document.getElementById("dvValidations").innerHTML =
+                    "ECT Price should not be less than 1000";
+                }
+                break;
+              case "ECL":
+                if (parseInt(this.value) < 20) {
+                  document.getElementById("save").disabled = true;
+                  this.style.backgroundColor = "red";
+                  document.getElementById("dvValidations").innerHTML =
+                    "ECL Price should not be less than 20";
+                }
+                break;
+              case "FOD":
+                if (parseInt(this.value) < 10) {
+                  document.getElementById("save").disabled = true;
+                  this.style.backgroundColor = "red";
+                  document.getElementById("dvValidations").innerHTML =
+                    "FOD Price should not be less than 10";
+                }
+                break;
+            }
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>The JavaScript Application</h1>
+    <div id="dvValidations" style="color: red"></div>
+    <table style="border: double">
+      <tbody>
+        <tr>
+          <td>Product Id</td>
+          <td>
+            <input type="text" id="productId" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product Name</td>
+          <td>
+            <input type="text" id="productName" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td>Category Name</td>
+          <td>
+            <select type="text" id="categoryName"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>
+            <input type="text" id="price" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" value="Clear" id="clear" />
+          </td>
+          <td>
+            <input type="button" value="Save" id="save" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <table style="border: double">
+      <thead id="thead"></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </body>
+</html>

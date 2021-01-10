@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script defer src="/cal.js"></script>
+  </head>
+  <body>
+    <h1>Basic Calculator</h1>
+    <div class="wrap">
+      <textarea rows="3" id="result"></textarea>
+      <div class="buttonContainer">
+        <button
+          onclick="getValue(this.value)"
+          value="C"
+          type="button"
+          class="btn btn-warning"
+          id="clear"
+        >
+          C
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="="
+          type="button"
+          class="btn btn-warning"
+          id="equals"
+        >
+          =
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="%"
+          type="button"
+          class="btn btn-warning"
+          id="divide"
+        >
+          %
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="1"
+          type="button"
+          class="btn btn-secondary"
+          id="one"
+        >
+          1
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="2"
+          type="button"
+          class="btn btn-secondary"
+          id="two"
+        >
+          2
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="3"
+          type="button"
+          class="btn btn-secondary"
+          id="three"
+        >
+          3
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="/"
+          type="button"
+          class="btn btn-warning"
+          id="divide"
+        >
+          /
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="4"
+          type="button"
+          class="btn btn-secondary"
+          id="four"
+        >
+          4
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="5"
+          type="button"
+          class="btn btn-secondary"
+          id="five"
+        >
+          5
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="6"
+          type="button"
+          class="btn btn-secondary"
+          id="six"
+        >
+          6
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="*"
+          type="button"
+          class="btn btn-warning"
+          id="multiply"
+        >
+          x
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="7"
+          type="button"
+          class="btn btn-secondary"
+          id="seven"
+        >
+          7
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="8"
+          type="button"
+          class="btn btn-secondary"
+          id="eight"
+        >
+          8
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="9"
+          type="button"
+          class="btn btn-secondary"
+          id="nine"
+        >
+          9
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="-"
+          type="button"
+          class="btn btn-warning"
+          id="minus"
+        >
+          -
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="0"
+          type="button"
+          class="btn btn-secondary"
+          id="zero"
+        >
+          0
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="."
+          type="button"
+          class="btn btn-secondary"
+          id="dot"
+        >
+          .
+        </button>
+        <button
+          onclick="getValue(this.value)"
+          value="+"
+          type="button"
+          class="btn btn-warning"
+          id="add"
+        >
+          +
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

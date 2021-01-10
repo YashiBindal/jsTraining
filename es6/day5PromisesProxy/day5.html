@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script defer src="./day5.js"></script>
+  </head>
+  <body>
+    <h1>Promises and Proxy Implementation</h1>
+    <div id="dvValidations" style="color: red"></div>
+    <table class="table table-dark table-hover">
+      <tbody>
+        <tr>
+          <td id="PRI">Product Row Id</td>
+          <td>
+            <input type="text" id="ProductRowId" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td id="PI">Product Id</td>
+          <td>
+            <input type="text" id="ProductId" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td id="PN">Product Name</td>
+          <td>
+            <input type="text" id="ProductName" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td id="MN">Manufacturer</td>
+          <td>
+            <input type="text" id="Manufacturer" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td id="CN">Category Name</td>
+          <td>
+            <select type="text" id="CategoryName" style="width: fit-content">
+              <option value="stationary">Stationary</option>
+              <option value="food">Food</option>
+              <option value="electronics">Electronics</option>
+              <option value="decor">Decor</option>
+              <option value="clothing">Clothing</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td id="DS">Description</td>
+          <td>
+            <input type="text" id="Description" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td id="PR">Price</td>
+          <td>
+            <input type="text" id="Price" class="c1" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="button"
+              class="btn btn-secondary"
+              value="Save"
+              id="save"
+              onclick="onClickHandler()"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="get"
+        onclick="getProducts()"
+      >
+        GET
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="put"
+        onclick="putProduct()"
+      >
+        PUT
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="post"
+        onclick="postProduct()"
+      >
+        POST
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="DELETE"
+        onclick="deleteProduct()"
+      >
+        DELETE
+      </button>
+    </div>
+    <div id="display"></div>
+  </body>
+</html>
