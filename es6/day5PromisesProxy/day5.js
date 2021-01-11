@@ -31,7 +31,7 @@ const saveClickHandler = {
         "Price must be a positive Integer";
       return false;
     }
-    console.log("property :>> ", property, typeof property);
+    //console.log("property :>> ", property, typeof property);
     target[property] = value;
     return true;
   },
@@ -41,17 +41,13 @@ prdData = new Proxy(prdData, saveClickHandler);
 
 function onClickHandler() {
   prdData.Price = document.getElementById("Price").value;
-  console.log(prdData.Price);
   prdData.Description = document.getElementById("Description").value;
   prdData.CategoryName = document.getElementById("CategoryName").value;
   prdData.Manufacturer = document.getElementById("Manufacturer").value;
   prdData.ProductName = document.getElementById("ProductName").value;
-  console.log(prdData.ProductName);
   prdData.ProductId = document.getElementById("ProductId").value;
-  console.log(prdData.ProductId);
   prdData.ProductRowId = document.getElementById("ProductRowId").value;
-  console.log(prdData.ProductRowId);
-  console.log(Object.values(prdData));
+  console.log(prdData);
 
   if (Object.values(prdData).length < 7) {
     document.getElementById("post").disabled = true;
@@ -59,6 +55,7 @@ function onClickHandler() {
     document.getElementById("get").disabled = true;
     document.getElementById("delete").disabled = true;
   } else {
+    document.getElementById("display").innerHTML = "";
     document.getElementById("post").disabled = false;
     document.getElementById("put").disabled = false;
     document.getElementById("get").disabled = false;
@@ -101,7 +98,8 @@ function getProducts() {
 }
 
 // subscribe to the Promise object and either get Resolve or rejected//
-document.getElementById("get").addEventListener(onclick, function () {
+document.getElementById("get").addEventListener("click", function () {
+  console.log("Inside get event listener");
   getProducts()
     .then((response) => {
       console.log(`Received Response ${response}`);
@@ -138,7 +136,8 @@ function postProduct(url, data) {
   });
 }
 
-document.getElementById("post").addEventListener(onclick, function () {
+document.getElementById("post").addEventListener("click", function () {
+  console.log("Inside post event listener");
   postProduct(
     "https://apiapptrainingnewapp.azurewebsites.net/api/Products",
     prdData
@@ -168,7 +167,7 @@ function putProduct(url, data) {
     let request = new XMLHttpRequest();
 
     request.onload = function () {
-      if (request.status == 201) {
+      if (request.status == 204) {
         resolve(request.response);
       } else {
         reject(new Error(request.statusText));
@@ -188,10 +187,11 @@ function putProduct(url, data) {
 }
 
 //subscribe to the Promise object and either get Resolve or rejected function
-document.getElementById("put").addEventListener(onclick, function () {
+document.getElementById("put").addEventListener("click", function () {
+  console.log("Inside put event listener");
   putProduct(
     "https://apiapptrainingnewapp.azurewebsites.net/api/Products" +
-      `${prdData.ProductRowId}`,
+      `/${prdData.ProductRowId}`,
     prdData
   )
     .then((resp) => {
@@ -208,7 +208,7 @@ function deleteProduct(url, data) {
     let request = new XMLHttpRequest();
 
     request.onload = function () {
-      if (request.status == 201) {
+      if (request.status == 200) {
         resolve(request.response);
       } else {
         reject(new Error(request.statusText));
@@ -228,10 +228,11 @@ function deleteProduct(url, data) {
 }
 
 //subscribe to the Promise object and either get Resolve or rejected function
-document.getElementById("delete").addEventListener(onclick, function () {
+document.getElementById("delete").addEventListener("click", function () {
+  console.log("Inside delete event listener");
   deleteProduct(
     "https://apiapptrainingnewapp.azurewebsites.net/api/Products" +
-      `${prdData.ProductRowId}`,
+      `/${prdData.ProductRowId}`,
     prdData
   )
     .then((resp) => {
