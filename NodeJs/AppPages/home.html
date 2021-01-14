@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Page Returned by Making Http Call to Node.js</title>
+    <style type="text/css">
+      table,
+      td,
+      th {
+        border: 1px solid black;
+      }
+    </style>
+    <script type="text/javascript" src="day8.js"></script>
+  </head>
+  <body>
+    <h1>Product Information Page</h1>
+    <form method="post">
+      <table>
+        <tr>
+          <td>Product Id:</td>
+          <td>
+            <input type="text" name="pid" id="pid" />
+          </td>
+        </tr>
+        <tr>
+          <td>Product Name:</td>
+          <td>
+            <input type="text" name="pname" id="pname" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Save" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!-- <br />
+    <button id="get" onclick="f()">Get Products</button>
+    <br />
+    <table>
+      <tr>
+        <thead id="thead">
+          <th style="border: 1px solid black" id="productId">Products Array</th>
+        </thead>
+      </tr>
+      <tbody id="tbody"></tbody>
+    </table> -->
+  </body>
+  <!-- <script>
+    function f() {
+      console.log("in get");
+      let td = "";
+      for (let product of products) {
+        td += `<td>${product}</td>`;
+      }
+      document.getElementById("tbody").innerHTML = `<tr>${td}</tr>`;
+    }
+  </script> -->
+</html>
