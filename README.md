@@ -119,7 +119,7 @@ his code is 007.Write a JavaScript reference function with following operations 
 
 # Day 5:
 
--code in es6/dat5PromisesProxy
+-code in es6/day5PromisesProxy
 
         -Create a HTML Page that will use XMLHttprequest object for performing
         AJAX Calls GET /POST/ PUT /DELETE
