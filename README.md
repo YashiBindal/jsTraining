@@ -2,11 +2,15 @@
 
 # Hands-on-Labs
 
-# Day 1: Code in Day1Calculator Project
+# Day 1:
+
+-Code in Day1Calculator Project
 
 Create a Calculator using JavaScript like Calculator Desktop application on Windows Machine.
 
-# Day 2: Code in Day 2 Folder
+# Day 2:
+
+-Code in Day 2 Folder
 
 -Create a String Object with multiple statements in it. Minimum 10 statements. The result should be shown on UI.
 The string must be accepted from the UI. e.g james bond is a mi 16 spy works for her majesty's govt.
@@ -48,7 +52,9 @@ his code is 007.Write a JavaScript reference function with following operations 
 
 # ES6
 
-# Day 3: Code in es6/day3Collections
+# Day 3:
+
+-Code in es6/day3Collections
 
         -Create a map with Products Information based on Id, Name, Category, Price, Manufacturer.
 
@@ -78,7 +84,9 @@ his code is 007.Write a JavaScript reference function with following operations 
         e.g. is property selected from select element is ProductName and
         sort radio button is clicked then table should show all products sorted by ProductName (at most tomorrow)
 
-# Day 4: Code in es6/day4classesInJs/day4.js
+# Day 4:
+
+-Code in es6/day4classesInJs/day4.js
 
         -Create a class that performs following operations
             -Should contain a method to create a Map() of employees
@@ -109,7 +117,9 @@ his code is 007.Write a JavaScript reference function with following operations 
                   -Return all Employees of specific Department having specific Designation
         -Write a method to Return All Employees Having Max Salary Per Department
 
-# Day 5: code in es6/dat5PromisesProxy
+# Day 5:
+
+-code in es6/dat5PromisesProxy
 
         -Create a HTML Page that will use XMLHttprequest object for performing
         AJAX Calls GET /POST/ PUT /DELETE
@@ -121,7 +131,9 @@ his code is 007.Write a JavaScript reference function with following operations 
         -Create a Proxy object that will Proxy for Product Object for making sure that,
         the ProductId should be passed as string, BasePrice as Number, the ProductName has length less than 30
 
-# Day 6: queries in day6basics.sql file
+# Day 6:
+
+-queries in day6basics.sql file
 
         - 1. Insert records in DoctorPatientIPD and DoctorPatientOPD tables
         - 2. Find out Patients assigned to each doctor in separate result from both tables
@@ -134,7 +146,9 @@ his code is 007.Write a JavaScript reference function with following operations 
 
 # NodeJS
 
-# Day 7: code in NodeJs/day7/day7server.js
+# Day 7:
+
+-code in NodeJs/day7/day7server.js
 
         -Create a HTTP Server, that will respond the Products Information as
                 -ProductId, ProductName, CategoryName,Price
@@ -145,7 +159,9 @@ his code is 007.Write a JavaScript reference function with following operations 
          and return the Products info based on search criteria.
          (pass this criteria either through Body else through header)
 
-# Day 8: code in NodeJs/day8/UpdatedDay8.js for task 1 and NodeJs/day8/Q
+# Day 8:
+
+-code in NodeJs/day8/UpdatedDay8.js for task 1 and NodeJs/day8/Q
 
         -Create a Node.js Web Server, that will render the Products.html.
          This page will have UI for Accepting the product data, use the tag
@@ -158,7 +174,9 @@ his code is 007.Write a JavaScript reference function with following operations 
         -Create a Node.js app that will perform Async operations
          for Reading / Writing data to external service using 'Q' library
 
-# Day 9: code in NodeJs/day9
+# Day 9:
+
+-code in NodeJs/day9/ExpressRestApi.js
 
         -Create an Express.js Web Application.
          This application will render HTML pages based on Express Routes.
@@ -167,7 +185,9 @@ his code is 007.Write a JavaScript reference function with following operations 
          Create an Array of UserName and Password, make sure that the user
          is able to perform REST API calls based on valid credentials
 
-# Day 10: code in NodeJs/day10
+# Day 10:
+
+-code in NodeJs/day10/day10SqlOrm.js
 
         Create a REST API that will have following operations to be performed using REST Calls
 
