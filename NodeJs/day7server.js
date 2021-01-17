@@ -1,5 +1,4 @@
 let http = require("http");
-let url = require("url");
 
 let Products = [
   {
@@ -46,6 +45,7 @@ let server = http.createServer((req, resp) => {
     let url = req.url.split("/")[1];
     console.log(url);
     let filterArr;
+    //for url with id
     if (url !== "favicon.ico") {
       // filter Employees based on id
       console.log("inside /pid");
@@ -54,6 +54,7 @@ let server = http.createServer((req, resp) => {
         resp.write(JSON.stringify(output));
       }
     }
+    //for other url conditions
     switch (url) {
       case "":
         resp.write("hello Users");
@@ -90,6 +91,7 @@ let server = http.createServer((req, resp) => {
         // with you logic`
         console.log(`Received data from post ${d}`);
         receivedData = JSON.parse(d);
+        //adding ID by auto_incrementing
         receivedData["pid"] = Products.length + 1;
         console.log(receivedData);
         Products.push(receivedData);

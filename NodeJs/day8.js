@@ -3,7 +3,7 @@ let http = require("http");
 let fs = require("fs");
 
 //2.
-let productPage = fs.readFileSync("./AppPages/home.html");
+let productPage = fs.readFileSync("./day8home.html");
 let productArr = [];
 //3.
 let server = http.createServer(function (req, resp) {

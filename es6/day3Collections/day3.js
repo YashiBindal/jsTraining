@@ -45,8 +45,6 @@ productMap.set("106", {
   price: "30",
 });
 
-console.log("productMap :>> ", productMap);
-
 //array of selected data object properties to display in table
 let headers = [
   { key: "id", heading: "Product Id" },
@@ -63,7 +61,10 @@ for (let header of headers) {
   options += `<option value="${header.key}">${header.heading}</option>`;
   headRow += `<th >${header.heading}</th>`;
 }
+
+// console.log("document :>> ", document);
 document.getElementById("properties").innerHTML = options;
+
 document.getElementById("thead").innerHTML = ` <tr>${headRow}</tr>`;
 
 //script for displaying table rows using map
@@ -76,7 +77,7 @@ document.getElementById("thead").innerHTML = ` <tr>${headRow}</tr>`;
 // Method 2
 let tr = "";
 productMap.forEach(function (product, key) {
-  console.log("value :>> ", product);
+  // console.log("value :>> ", product);
   tr += createRow(product);
 });
 document.getElementById("tbody").innerHTML = tr;
@@ -93,6 +94,7 @@ document.getElementById("attribute").addEventListener("change", function () {
   filterProduct(input, choice);
 });
 // -----------------------------------------------------------------------------------------
+// support functions
 
 function filterProduct(input, options) {
   let filteredRows = "";
@@ -129,4 +131,60 @@ function createRow(product) {
     cols += `<td>${product[header.key]}</td>`;
   }
   return `<tr>${cols}</tr>`;
+}
+
+// -------------------------------------------xx------------------------------------
+//code to sort according to option selected
+
+document.getElementById("sort").addEventListener("click", () => {
+  let choice = document.getElementById("properties").value;
+  let sortedRows = "";
+  sortRows(choice, false).forEach((product) => {
+    sortedRows += createRow(product);
+  });
+
+  document.getElementById("tbody").innerHTML = sortedRows;
+});
+
+document.getElementById("reverse").addEventListener("click", () => {
+  let choice = document.getElementById("properties").value;
+  let sortedRows = "";
+  sortRows(choice, true).forEach((product) => {
+    sortedRows += createRow(product);
+  });
+
+  document.getElementById("tbody").innerHTML = sortedRows;
+});
+
+function sortRows(choice, reverse) {
+  console.log("productMap.values() :>> ", productMap.values());
+  let productArr = Array.from(productMap.values());
+  if (choice == "id" || choice == "price") {
+    productArr.sort((productA, productB) => {
+      if (reverse) return productB[choice] - productA[choice];
+
+      return productA[choice] - productB[choice];
+    });
+  } else {
+    productArr.sort((productA, productB) => {
+      var a = reverse
+        ? productB[choice]?.toUpperCase()
+        : productA[choice]?.toUpperCase(); // ignore upper and lowercase
+
+      var b = reverse
+        ? productA[choice]?.toUpperCase()
+        : productB[choice]?.toUpperCase(); // ignore upper and lowercase
+
+      if (a < b) {
+        return -1;
+      }
+      if (a > b) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    });
+  }
+  return productArr;
 }

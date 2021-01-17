@@ -58,37 +58,59 @@ class Employees {
     switch (condition) {
       case "department":
         const dept = deptMap.get(value);
-        dept.currentEmployees.map((id) => {
+        dept.currentEmployees.forEach((id) => {
           filterEmp.push(EmpMap.get(id));
         });
         break;
       case "location":
-        Employees.#allEmployees.map((id) => {
+        Employees.#allEmployees.forEach((id) => {
           const emp = EmpMap.get(id);
           if (emp.location.toLowerCase() == value.toLowerCase())
             filterEmp.push(emp);
         });
         break;
       case "desg":
-        Employees.#allEmployees.map((id) => {
+        Employees.#allEmployees.forEach((id) => {
           const emp = EmpMap.get(id);
           if (emp.desg.toLowerCase() == value.toLowerCase())
             filterEmp.push(emp);
         });
         break;
       case "eName":
-        Employees.#allEmployees.map((id) => {
+        Employees.#allEmployees.forEach((id) => {
           const emp = EmpMap.get(id);
           if (emp.name.toLowerCase() == value.toLowerCase())
             filterEmp.push(emp);
         });
         break;
+      case "d&d":
+        const department = deptMap.get(value.dept);
+        department.currentEmployees.forEach((id) => {
+          const employee = EmpMap.get(id);
+          if (employee.desg.toLowerCase() == value.desg.toLowerCase())
+            filterEmp.push(employee);
+        });
+        break;
       default:
-        Employees.#allEmployees.map((id) => {
+        Employees.#allEmployees.forEach((id) => {
           filterEmp.push(EmpMap.get(id));
         });
     }
     return filterEmp;
+  }
+
+  static getMaxSalInDept(deptId) {
+    const department = deptMap.get(deptId);
+    let maxSalary = 0;
+    let maxId;
+    department.currentEmployees.forEach((empId) => {
+      const employee = EmpMap.get(empId);
+      if (employee.salary > maxSalary) {
+        maxSalary = employee.salary;
+        maxId = empId;
+      }
+    });
+    return { maxSalary, maxId };
   }
 
   updateEmployee(newDetails) {
@@ -207,7 +229,7 @@ let emp7 = new Employees({
   id: 106,
   name: "Yashi3",
   desg: "manager",
-  salary: 10000,
+  salary: 50000,
   deptId: 301,
   location: "New Zealand",
 });
@@ -240,4 +262,9 @@ console.log("department", Employees.getAllEmployees("department", 301));
 console.log("location", Employees.getAllEmployees("location", "India"));
 console.log("desg", Employees.getAllEmployees("desg", "intern"));
 console.log("eName", Employees.getAllEmployees("eName", "yashi3"));
+console.log(
+  "eName",
+  Employees.getAllEmployees("d&d", { dept: 301, desg: "intern" })
+);
 // console.log(Employees.getAllEmployees("department", 301));
+console.log("max salary and employee", Employees.getMaxSalInDept(301));
