@@ -46,6 +46,8 @@ his code is 007.Write a JavaScript reference function with following operations 
 
       -Generalize the Table HEader and Rows creation for product table
 
+# ES6
+
 # Day 3: Code in es6/day3Collections
 
         -Create a map with Products Information based on Id, Name, Category, Price, Manufacturer.
@@ -130,24 +132,40 @@ his code is 007.Write a JavaScript reference function with following operations 
             - as Heart ane then from DoctorPatientIPD read Patient id for heart specialist and display
             - their names
 
+# NodeJS
+
 # Day 7: code in NodeJs/day7/day7server.js
 
-        -Node.js
-
-        -Create a HTTP Server, that will respond the Products Information as ProductId, ProductName, CategoryName, -Price
-        -The HTTP Server must have capability to create a new record in Products and return the newly created -record. Generate ProductId as AUTO_GENERATED key on HTTP Server.
-        -Accept the data for search from the client (POSTMAN / Advanced REST CLIENT (ARC)) and return the Products -info based on search criteria. (pass this criteria either through Body else through header)
+        -Create a HTTP Server, that will respond the Products Information as
+                -ProductId, ProductName, CategoryName,Price
+        -The HTTP Server must have capability to create a new record in Products
+         and return the newly created record.
+        -Generate ProductId as AUTO_GENERATED key on HTTP Server.
+        -Accept the data for search from the client (POSTMAN / Advanced REST CLIENT (ARC))
+         and return the Products info based on search criteria.
+         (pass this criteria either through Body else through header)
 
 # Day 8: code in NodeJs/day8/UpdatedDay8.js for task 1 and NodeJs/day8/Q
 
-        -Create a Node.js Web Server, that will render the Products.html. This page will have UI for Accepting the product data, use the tag and submit the form with the Product Information. Once this page is posted, received the posted data and the data has to be added in the server in Products array. Display this products array in the table back to the page.
-        HINT: https://www.dotnetcurry.com/nodejs/1216/using-nodejs-process-post-data
+        -Create a Node.js Web Server, that will render the Products.html.
+         This page will have UI for Accepting the product data, use the tag
+         and submit the form with the Product Information.
+         Once this page is posted, received the posted data
+         and the data has to be added in the server in Products array.
+         Display this products array in the table back to the page.
+         HINT: https://www.dotnetcurry.com/nodejs/1216/using-nodejs-process-post-data
 
-        -Create a Node.js app that will perform Async operations for Reading / Writing data to external service using 'Q' library
+        -Create a Node.js app that will perform Async operations
+         for Reading / Writing data to external service using 'Q' library
 
 # Day 9: code in NodeJs/day9
 
-        Create an Express.js Web Application. This application will render HTML pages based on Express Routes. Create REST APIs using Express.js that will perform CRUD Operations to the Pertsistable Store in memory Create an Array of UserName and Password, make sure that the user is able to perform REST API calls based on valid credentials
+        -Create an Express.js Web Application.
+         This application will render HTML pages based on Express Routes.
+         Create REST APIs using Express.js that will perform CRUD Operations
+         to the Persistable Store in memory.
+         Create an Array of UserName and Password, make sure that the user
+         is able to perform REST API calls based on valid credentials
 
 # Day 10: code in NodeJs/day10
 
