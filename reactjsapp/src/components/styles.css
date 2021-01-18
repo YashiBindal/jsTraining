@@ -1,0 +1,26 @@
+h1 {
+  color: orange;
+  text-align: center;
+}
+.wrap {
+  width: 15rem;
+  margin: 0 auto;
+}
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn {
+  width: 3rem;
+  margin: 0.3rem;
+}
+textarea {
+  width: 15rem;
+  border: solid 2px grey;
+}
+#equals {
+  width: 6.6rem;
+}
+#zero {
+  width: 6.6rem;
+}
