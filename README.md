@@ -202,3 +202,40 @@ his code is 007.Write a JavaScript reference function with following operations 
         20% of salary from 2L to 5L
         30% more that 5L
         HINT: Create a Stored Proc or write the logic in Application Server in REST APIs
+
+# ReactJS
+
+# day 11:
+
+-code in reactjsapp/components/day11
+-Simple calculator using react Class components
+
+# day 12:
+
+-code in reactjsapp/components/day12
+
+        -Create a GridComponent in React.js using HTML element with the following specifications -
+
+            -The Table should accept the DataSource property from parent
+             of the type array to generate Rows and Columns (mandatory today)
+
+            -Make sure that the the DataSource in not undefined or empty,
+             if it is, then return a message that Grid Cannot be generated to parent (mandatory today)
+
+            -When a row is selected from the GridComponent,
+             the data of the selected row must be passed to the parent component.
+             so that parent component can update it(mandatory today)
+
+            -The GridComponent, can accept the 'canDelete' prop type form parent as boolean.
+             If the 'canDelete' is true, then each row must generate the delete button
+             and when this button is clicked, the row must be deleted from the array
+             of the parent component. (mandatory today)
+
+            -The GridComponent can accept isSort boolean prop type and sortKey prop type.
+             If isSort is true, then the data in the GridComponent must be sorted
+             in ascending order of the 'sortKey' value - if isSort = true and sortKey=ProductName, then the data in GridComponent must be shown in sorted order of the ProductName (mandatory today)
+
+            -GridComponent accept props type to show number of rows based on
+             rowCount prop type passed from parent. The parent may keep of changing
+             value of the rowCount and based on the rowCount, the GridComponent
+             should show the records. (optional)
