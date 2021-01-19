@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 // import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Calculator from "./components/calculator";
-
-
+// import Calculator from "./components/calculator";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import EmpDeptComponent from "./components/emptable/EmpDeptComponent";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calculator />
+    <EmpDeptComponent />
   </React.StrictMode>,
   document.getElementById("root")
 );
