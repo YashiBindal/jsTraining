@@ -20,7 +20,7 @@ instance.use(
 );
 
 // define a database connection information
-const sequelize = new Sequelize("Company", "root", "y@Shi144", {
+const sequelize = new Sequelize("Company", "root", "password", {
   host: "localhost", // database hosting machine-name / ip address / localhost
   dialect: "mysql", // the database provider engine / service
   pool: {
