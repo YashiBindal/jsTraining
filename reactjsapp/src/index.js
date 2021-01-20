@@ -5,11 +5,12 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // import Calculator from "./components/calculator";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import EmpDeptComponent from "./components/emptable/EmpDeptComponent";
+// import EmpDeptComponent from "./../src/components/day12/EmpDeptComponent";
+import ValidationComponent from "./components/day13/validationComponent";
 
 ReactDOM.render(
   <React.StrictMode>
-    <EmpDeptComponent />
+    <ValidationComponent />
   </React.StrictMode>,
   document.getElementById("root")
 );
