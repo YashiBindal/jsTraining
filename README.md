@@ -239,3 +239,77 @@ his code is 007.Write a JavaScript reference function with following operations 
              rowCount prop type passed from parent. The parent may keep of changing
              value of the rowCount and based on the rowCount, the GridComponent
              should show the records. (optional)
+
+# day13:
+
+-code in reactjsapp/components/day13
+
+         -Form Validation using react components
+
+# day14:
+
+-code in reactapp/src/routing
+
+        -Create MySQL-Express-React-Node Application with the following specifications
+
+        -Create Database Component with Department and Employee Tables (Already Done)
+
+        -Create REST APIs using Express + Node for Performing CRUD operations on
+
+                -Department and Employee tables using MySQL + Sequelize (Already Done)
+
+        -Create a React Single Page Application for perform CRUD Operations by calling   REST APIs for Department (Done by Trainer Mahesh Sabnis) and Employee in React application
+
+        -Create HTTP Service using axios for get/post/put/delete for Employee REST API
+
+        -Create Components for
+                -List Employees
+
+                -Should Have Search Functionality for Employee Based on DeptName / EmpName / Designation
+
+                -The Employee List should show all employees by default, then it should filter employees based on search
+
+                -Employee List must have Edit and Delete Buttons for Navigating to Edit and Delete Components
+
+                -Create Employee must have validation check with Validation Summary (Use Validation Summary Component)
+
+                -Edit component will edit employee with all validations
+
+                -Delete component is just a read-only component that will be used by end-user to see which employee is being deleted
+
+        -Each component must have link for going back to List Employee component if end-use does-not want to create/edit/delete
+
+# day 16
+
+-code in reactapp/redux and index page is index_day16_reducers.js
+
+        -create an action 'SELECT_EMPLOYEE', dispatch this action on the onClick() event of the table row in ListEmployeesComponent. The selected, employee must be displayed inside the CreateEmployeeComponent.
+
+# day17
+
+- code in reactapp/sagaApp and index page is index_saga_day17.js
+
+        -Hands-on of the day
+
+                -Recap the code for Redux-SAGA
+                -Modify the SAGA middleware for PUT and DELETE operations
+
+# day18
+
+- code in NodeJs/security and reactapp/src/services/secureService
+
+        -Authentication using JWT tokens And Session
+
+# day19
+
+       - Exercise Microservice
+
+        -Create separate REST APIs those are doing CRUD operations on MySQL instance on AWS RDS
+
+        -Dockerize each REST API in separate docker image
+
+        -Use Docker-compose to deploy and run both the microservices at a time inside the docker env.
+
+        -CReate a RabbitMQ subscription in the Microservices and communicate data across them
+
+        -e.g. The EMployee will be created in the department if the department exists and the Capacity of the department is not full

@@ -20,7 +20,7 @@ instance.use(
 );
 
 // define a database connection information
-const sequelize = new Sequelize("Company", "root", "password", {
+const sequelize = new Sequelize("Company", "root", "y@Shi144", {
   host: "localhost", // database hosting machine-name / ip address / localhost
   dialect: "mysql", // the database provider engine / service
   pool: {
@@ -86,7 +86,7 @@ instance.get("/api/employees", (req, resp) => {
     });
 });
 
-instance.get("/api/departments/:id", (req, resp) => {
+instance.get("/api/department/:id", (req, resp) => {
   let id = parseInt(req.params.id);
   sequelize
     .sync({

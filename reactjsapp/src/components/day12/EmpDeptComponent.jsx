@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Departments, Designations } from "./../../models/constants";
-import SelectComponent from "./../day12/selectComponent";
-import TableComponent from "./../day12/tableComponent";
+import SelectComponent from "../reusableComponents/selectComponent";
+import TableComponent from "../reusableComponents/tableComponent";
 class EmpDeptComponent extends Component {
   /**
    * @param {any} props

@@ -57,9 +57,8 @@ insert into Employee Values(123, 'Anil', 'Operator', 480000, 20);
 insert into Employee Values(124, 'Abhay', 'Operator', 510000, 30);
 insert into Employee Values(125, 'Sanjay', 'Operator', 200000, 40);
 
-
+delete from employee where EmpNo>=105 and EmpNo<=119;
 select * from Employee ;
-
 
 DELIMITER //
 CREATE PROCEDURE getEmployees
