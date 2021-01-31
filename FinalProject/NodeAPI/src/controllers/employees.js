@@ -93,12 +93,10 @@ const createEmployee = async (req, resp) => {
         console.log("data to check emp", data);
         if (data) return emp.create(newEmp);
         else
-          resp
-            .status(400)
-            .json({
-              status: 400,
-              response: "DeptNo not found, check departments first",
-            });
+          resp.status(400).json({
+            status: 400,
+            response: "DeptNo not found, check departments first",
+          });
       }
     )
     .then((data) => {
