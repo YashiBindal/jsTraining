@@ -48,13 +48,14 @@ class UserAuth {
     const find = await users.findOne({ where: { userName: newUser.userName } });
     if (find !== null)
       // conflict
-      return resp
-        .status(409)
-        .send({ response: `${newUser.userName} is already present` });
+      return resp.status(409).send({
+        response: `${newUser.userName} is already present`,
+        status: 409,
+      });
 
     // create a user
     const created = await users.create(newUser);
-    return resp.status(201).send({ response: created });
+    return resp.status(200).send({ response: created, status: 200 });
   }
 
   ///--------------------------------------xx-------------------------------------------
@@ -73,14 +74,16 @@ class UserAuth {
     });
     if (find === null)
       // not found
-      return resp
-        .status(409)
-        .send({ response: `Sorry! ${userInfo.userName} is not found` });
+      return resp.status(409).send({
+        response: `Sorry! ${userInfo.userName} is not found`,
+        status: 409,
+      });
     // check for password
     if (find.password.trim() !== userInfo.password.trim())
       // unauthorized
       return resp.status(401).send({
         response: `Sorry!! Password for ${userInfo.userName} is incorrect`,
+        status: 401,
       });
 
     const token = jwt.sign({ userInfo }, jwtSettings.jwtSecret, {
@@ -90,9 +93,10 @@ class UserAuth {
     req.session.name = userInfo.userName;
     console.log(`The current session is for user ${req.session.name}`);
     return resp.status(200).send({
-      response: `Login Successful for ${userInfo.userName},The current session is for user ${req.session.name}`,
+      response: `Login Successful for ${userInfo.userName}`,
       authenticated: true,
       token: token,
+      status: 200,
     });
   }
   //--------------------------------------------xx------------------------------------------
@@ -119,6 +123,7 @@ class UserAuth {
             return resp
               .status(401)
               .send({ response: `Authentication failed ${error}` });
+
           await sequelize.sync({ force: false });
           const find = await depts.findAll();
           // connect to db using sequelize

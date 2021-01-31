@@ -8,7 +8,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import DepartmentComponent from "./components/day14/mernSpa/DepartmentComponent";
 // import EmpDeptComponent from "./../src/components/day12/EmpDeptComponent";
 // import ValidationComponent from "./components/day13/validationComponent";
-// import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 // import MainComponent from "./../src/routingDay14/MainComponent";
 // import { createStore } from "redux";
 
@@ -20,10 +20,13 @@ import { Provider } from "react-redux";
 
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
-import reducer from "./sagaApp/reducers/reducers";
-import rootSaga from "./sagaApp/sagas/sagaindex";
-import MainSagaComponent from "./sagaApp/mainSagaComponent";
+// import reducer from "./sagaApp/reducers/reducers";
+// import rootSaga from "./sagaApp/sagas/sagaindex";
+// import MainSagaComponent from "./sagaApp/mainSagaComponent";
 
+import MainComponent from "./FinalProject/MainComponent.jsx";
+import reducer from "./FinalProject/reducers/reducers";
+import rootSaga from "./FinalProject/sagas/saga";
 // let store = createStore(
 //   reducers,
 //   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
@@ -49,11 +52,13 @@ let store = createStore(
 // keep the middleware running so that all actions will be monitored
 appSagaMiddlewareInstance.run(rootSaga);
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <MainSagaComponent></MainSagaComponent>
-    </Provider>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <MainComponent></MainComponent>
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

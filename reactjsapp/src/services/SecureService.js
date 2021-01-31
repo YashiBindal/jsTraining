@@ -5,18 +5,28 @@ export class SecureHttpService {
     this.url = "http://localhost:9091";
   }
 
-  createUser(user) {
-    let response = axios.post(`${this.url}/api/users/create`, user, {
-      "Content-Type": "application/json",
-    });
-    return response;
+  async createUser(user) {
+    try {
+      let response = await axios.post(`${this.url}/api/users/create`, user, {
+        "Content-Type": "application/json",
+      });
+      return response.data;
+    } catch (error) {
+      console.log("error", error.response);
+      return error.response.data;
+    }
   }
 
-  authUser(user) {
-    let response = axios.post(`${this.url}/api/users/auth`, user, {
-      "Content-Type": "application/json",
-    });
-    return response;
+  async authUser(user) {
+    try {
+      let response = await axios.post(`${this.url}/api/users/auth`, user, {
+        "Content-Type": "application/json",
+      });
+      return response.data;
+    } catch (error) {
+      console.log("error", error.response);
+      return error.response.data;
+    }
   }
 
   getData(token) {

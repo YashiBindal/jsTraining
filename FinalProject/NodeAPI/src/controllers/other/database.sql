@@ -31,16 +31,6 @@ Create Table Employee (
   Foreign Key (DeptNo) References Department (DeptNo)
 );
 
-create table Users(
-	userId int auto_increment primary key,
-    userName varchar(20) unique not null,
-    password varchar(20) not null,
-    email varchar(100) not null
-);
-insert into Users values(1,"yashi","yashi123","yashi@mail.com");
-insert into Users values(2,"jay","jay123","jay@mail.com");
-
-select * from users;
 
 insert into Employee Values(101, 'Mahesh', 'Manager', 120000, 10);
 insert into Employee Values(102, 'Vivek', 'Manager', 120000, 20);
@@ -67,9 +57,7 @@ insert into Employee Values(123, 'Anil', 'Operator', 480000, 20);
 insert into Employee Values(124, 'Abhay', 'Operator', 510000, 30);
 insert into Employee Values(125, 'Sanjay', 'Operator', 200000, 40);
 
-delete from employee where EmpNo>=103 and EmpNo<=121;
-
-Truncate table Employee;
+delete from employee where EmpNo>=105 and EmpNo<=119;
 select * from Employee ;
 
 DELIMITER //
@@ -117,8 +105,6 @@ SELECT
     *
 FROM
     Department;
-
-
 
 DELIMITER //
 CREATE PROCEDURE getEmployeesInDept

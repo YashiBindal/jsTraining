@@ -28,3 +28,10 @@ export const deleteDepartment = (deptNo) => {
     payload: id,
   };
 };
+export const createUser = (user) => {
+  console.log("user info created is ", user);
+  return {
+    type: "ADD_USER",
+    payload: user,
+  };
+};

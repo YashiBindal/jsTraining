@@ -13,6 +13,7 @@ export const saveDepartment = (department) => {
     payload: department,
   };
 };
+
 export const updateDepartment = (department) => {
   console.log("dept in update dept", department.DeptNo);
   return {
@@ -20,6 +21,7 @@ export const updateDepartment = (department) => {
     payload: department,
   };
 };
+
 export const deleteDepartment = (deptNo) => {
   let id = deptNo.DeptNo;
   console.log("Id", id);

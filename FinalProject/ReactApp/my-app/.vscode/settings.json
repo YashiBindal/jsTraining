@@ -1,0 +1,22 @@
+{
+    "cSpell.words": [
+        "Depts"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#4de265",
+        "activityBar.activeBorder": "#8876e9",
+        "activityBar.background": "#4de265",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#8876e9",
+        "activityBarBadge.foreground": "#15202b",
+        "statusBar.background": "#23d941",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#1cad34",
+        "titleBar.activeBackground": "#23d941",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#23d94199",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#23d941"
+}
