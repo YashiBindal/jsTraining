@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const SignUpResponseComponent = () => {
-  const { user, status, message } = useSelector((state) => state);
+  const { user, status, message } = useSelector((state) => state.users);
 
   return status === 200 ? (
     <div
@@ -41,7 +41,7 @@ const SignUpResponseComponent = () => {
     </div>
   ) : (
     <div className="container" style={{ color: "red" }}>
-      <h5>{message},Try another username</h5>
+      <h5>{message}</h5>
     </div>
   );
 };

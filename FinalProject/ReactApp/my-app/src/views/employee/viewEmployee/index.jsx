@@ -50,7 +50,7 @@ export const ViewEmployees = () => {
       </Link>
     </div>
   ) : (
-    <h5>No records Found</h5>
+    <h5>Loading...</h5>
   );
 };
 

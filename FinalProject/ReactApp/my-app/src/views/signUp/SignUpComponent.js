@@ -10,7 +10,7 @@ const SignUpComponent = (props) => {
     email: "",
   });
   const [showMsg, setShowMsg] = useState(false);
-  const success = useSelector((state) => state.success);
+  const success = useSelector((state) => state.users.success);
 
   const clear = () => {
     setShowMsg(false);
@@ -67,7 +67,7 @@ const SignUpComponent = (props) => {
 
             <input
               type="button"
-              value="Save"
+              value="Submit"
               onClick={() => {
                 setShowMsg(true);
                 props.addUser(user);

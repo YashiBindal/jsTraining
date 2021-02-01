@@ -25,7 +25,7 @@ export const EditEmployee = () => {
   }, [editState, history, dispatch]);
 
   return (
-    <div class="container">
+    <div className="container">
       <EmployeeForm onSave={onSave} editEmp={editEmployee} />
       {editState === "failed" && (
         <div className="container">DB error: {message}</div>

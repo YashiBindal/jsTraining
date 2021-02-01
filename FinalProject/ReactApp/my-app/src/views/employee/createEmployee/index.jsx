@@ -23,7 +23,7 @@ export const CreateEmployee = () => {
   }, [loadingState, history, dispatch]);
 
   return (
-    <div class="container">
+    <div className="container">
       <EmployeeForm onSave={onSave} />
       {loadingState === "failed" && (
         <div className="container">DB error: {message}</div>
