@@ -48,6 +48,20 @@ export const HomeComponent = () => {
             </button>
           </Link>
         </div>
+        <div
+          className="container"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <Link to="/depts" style={{ color: "white" }}>
+            <button
+              className="btn btn-primary"
+              value="createEmp"
+              style={{ margin: "10px" }}
+            >
+              View Departments
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

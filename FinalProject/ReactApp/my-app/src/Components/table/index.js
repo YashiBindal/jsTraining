@@ -3,9 +3,10 @@ import { useHistory } from "react-router-dom";
 
 export const Table = ({
   rows,
-  canDelete = true,
+  canDelete,
   onEditClick,
   onDeleteClick,
+  canEdit,
 }) => {
   const headers = useMemo(() => rows.length && Object.keys(rows[0]), [rows]);
   const rowAccessor = useMemo(() => rows.length && Object.keys(rows[0])[0], [
@@ -43,22 +44,26 @@ export const Table = ({
               {headers.map((col, idx) => (
                 <td key={idx}>{row[col]}</td>
               ))}
-              <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => handleRowDelete(row[rowAccessor])}
-                >
-                  Delete
-                </button>
-              </td>
-              <td>
-                <button
-                  className="btn btn-warning"
-                  onClick={() => handleEditClick(row)}
-                >
-                  Edit
-                </button>
-              </td>
+              {canEdit && (
+                <td>
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => handleEditClick(row)}
+                  >
+                    Edit
+                  </button>
+                </td>
+              )}
+              {canDelete && (
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleRowDelete(row[rowAccessor])}
+                  >
+                    Delete
+                  </button>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>

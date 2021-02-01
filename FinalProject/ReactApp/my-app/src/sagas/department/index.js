@@ -2,7 +2,7 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { createDept, deleteDept, getDepts, updateDept } from "services";
 
 function getDepartments() {
-  const response = getDepts.then((res) => {
+  const response = getDepts().then((res) => {
     if (res.status === 200) {
       return {
         payload: res,

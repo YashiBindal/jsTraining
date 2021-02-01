@@ -68,7 +68,7 @@ insert into Employee Values(124, 'Abhay', 'Operator', 510000, 30);
 insert into Employee Values(125, 'Sanjay', 'Operator', 200000, 40);
 
 delete from employee where EmpNo>=103 and EmpNo<=121;
-
+delete from department where DeptNo>60;
 Truncate table Employee;
 select * from Employee ;
 

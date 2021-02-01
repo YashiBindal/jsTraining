@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Redirect, Route, Switch } from "react-router-dom";
+import ViewDepartments from "views/department/viewDepartment";
 import ViewEmployees from "views/employee/viewEmployee";
 import HomeComponent from "views/HomeComponent";
 import { EditEmployee } from "../views/employee/editEmployee/index";
@@ -22,9 +23,10 @@ const MainSagaComponent = () => {
           path="/signUpResponse"
           component={SignUpResponseComponent}
         ></Route>
-        <Route exact path="/createEmp" component={CreateEmployee}></Route>
         <Route exact path="/homePage" component={HomeComponent}></Route>
+        <Route exact path="/depts" component={ViewDepartments}></Route>
         <Route exact path="/emps" component={ViewEmployees}></Route>
+        <Route exact path="/createEmp" component={CreateEmployee}></Route>
         <Route exact path="/editEmp" component={EditEmployee}></Route>
 
         <Redirect to="/"></Redirect>

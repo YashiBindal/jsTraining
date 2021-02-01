@@ -2,7 +2,13 @@ export const departmentReducer = (state = {}, action) => {
   switch (action.type) {
     case "GET_DEPARTMENTS_SUCCESS": {
       const { response, status, rowCount } = action.payload;
-      return { ...state, departments: response, status, rowCount, message: "" };
+      return {
+        ...state,
+        departmentArray: response,
+        status,
+        rowCount,
+        message: "",
+      };
     }
     case "GET_DEPARTMENTS_FAIL": {
       const { response, status } = action.payload;

@@ -21,7 +21,10 @@ export const ViewEmployees = () => {
         flexWrap: "wrap",
       }}
     >
+      <h3 style={{ marginTop: "20px" }}>Employees List</h3>
       <Table
+        canDelete={true}
+        canEdit={true}
         rows={employeeArray}
         onEditClick={(emp) => {
           dispatch(setEditEmployee(emp));
@@ -42,7 +45,7 @@ export const ViewEmployees = () => {
       <Link to="/homePage" style={{ color: "white" }}>
         <button
           className="btn btn-primary"
-          value="createEmp"
+          value="Home"
           style={{ margin: "10px" }}
         >
           Back to Home
@@ -50,7 +53,7 @@ export const ViewEmployees = () => {
       </Link>
     </div>
   ) : (
-    <h5>Loading...</h5>
+    <h5>No records Found</h5>
   );
 };
 
