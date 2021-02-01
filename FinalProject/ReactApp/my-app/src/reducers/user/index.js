@@ -10,7 +10,6 @@ export const userReducer = (state = {}, action) => {
         status,
         message: "",
         success: true,
-        authenticated: false,
       };
     }
     case "ADD_USER_FAIL": {
@@ -32,9 +31,9 @@ export const userReducer = (state = {}, action) => {
         ...state,
         message: response,
         status,
-        authenticated: true,
+        authenticated,
         token,
-        success: true,
+        successLogin: true,
       };
     }
     case "LOGIN_FAIL": {
@@ -43,7 +42,7 @@ export const userReducer = (state = {}, action) => {
         ...state,
         message: response,
         status,
-        success: false,
+        successLogin: false,
         authenticated: false,
       };
     }

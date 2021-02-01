@@ -13,7 +13,7 @@ const LoginComponent = (props) => {
   });
   const [showMsg, setShowMsg] = useState(false);
 
-  const { authenticated, message, success } = useSelector(
+  const { authenticated, message, successLogin } = useSelector(
     (state) => state.users
   );
 
@@ -33,7 +33,7 @@ const LoginComponent = (props) => {
 
   return (
     <div className="container">
-      {!success && (
+      {!successLogin ? (
         <div>
           <h3>User Information</h3>
           <div className="form-group">
@@ -81,14 +81,15 @@ const LoginComponent = (props) => {
             />
           </div>
         </div>
+      ) : (
+        <div>
+          {showMsg && (
+            <div className="container" style={{ color: "red" }}>
+              {message}
+            </div>
+          )}
+        </div>
       )}
-      <div>
-        {showMsg && (
-          <div className="container" style={{ color: "red" }}>
-            {message}
-          </div>
-        )}
-      </div>
     </div>
   );
 };
