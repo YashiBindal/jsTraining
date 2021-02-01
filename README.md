@@ -2,6 +2,26 @@
 
 # Hands-on-Labs
 
+# Final Project
+
+-code in FinalProject folder
+
+-React-Redux Final Hands-on Project
+
+        -Create a Single page React Application based on MERN
+
+        -It should use the Redux State management and SAGA middleware to perform CRUD operations
+
+        -Note: Define Database and tables of your choice
+
+        -Create Express RES API for CRUD operations
+
+        -This MUST cover
+                -React Components with Hooks
+                -React-Router-DOM
+                -Redux State Management
+                -SAGA Middleware
+
 # Day 1:
 
 -Code in Day1Calculator Project
