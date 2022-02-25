@@ -1,3 +1,6 @@
+This repo contains all the projects created using js and react as part of a training programm. Mentioned below are day wise tasks and final project
+
+
 # jsTraining
 
 # Hands-on-Labs
